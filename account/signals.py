@@ -9,15 +9,16 @@ User = get_user_model()
 def send_activate_email(sender, instance, created, **kwargs):
     if created:
         message = f"""
-            Hello, {instance.first_name}.
+            Hello {instance.first_name},
 
             Thank you for signing up on our platform.
-            We're happy to have you! 😀🤗😁
+            We're happy to have you!
             Regards, 
+
             The Expirey Team.
         """
         send_mail(
-            subject="Your Account has been created!", 
+            subject="Your Expirey Account has been created!", 
             message=message, 
             recipient_list=[instance.email],
             from_email="aktakinro@gmail.com"
