@@ -1,3 +1,4 @@
+from urllib import request
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
@@ -13,10 +14,23 @@ from django.shortcuts import render
 def drug_list(request):
     return Response('ok')
 
+
+@api_view()
+def drug_detail(request, id):
+    return Response(id)
+
 @api_view()
 def drug_batch_list(request):
     return Response('ok')
 
 @api_view()
+def drug_batch_detail(request, id):
+    return Response(id)
+
+@api_view()
 def alert_list(request):
     return Response('ok')
+
+@api_view()
+def alert_detail(request, id):
+    return Response(id)
